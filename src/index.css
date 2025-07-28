@@ -3,5 +3,27 @@ body {
     Arial, sans-serif;
   margin: auto;
   max-width: 38rem;
-  padding: 2rem;
+
+  background-size: contain;
+
 }
+
+html,body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.app-window {
+  background: url('./assets/background.gif')no-repeat center center fixed ;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 400px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  -webkit-app-region: drag;
+}
+
