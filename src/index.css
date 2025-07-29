@@ -3,7 +3,9 @@
   src: url('./assets/fonts/PixelifySans-Regular.ttf');
   font-weight: 400;
 }
-
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 body {
   font-family: Pixelify Sans,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
   Arial, sans-serif;
@@ -27,24 +29,40 @@ html,body {
   height: 400px;
   box-sizing: border-box;
   border-radius: 5px;
+  padding: 10px;
+}
+.control-bar {
   -webkit-app-region: drag;
 }
 
 button {
-    -webkit-app-region: no-drag;
+  -webkit-app-region: no-drag;
+}
+
+.control-bar {
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .btn-close {
-  background-color: transparent;
   background-image: url('assets/close_app.png');
-  height: 22px;
-  width: 22px;
-  border: none;
+}
+.btn-celsius {
+  background-image: url('assets/celsius_icon.png');
+}
+.btn-fahrenheit {
+  background-image: url('assets/fahrenheit_icon.png');
 }
 
-.celsius_icon, .btn-close {
+.btn-fahrenheit, .btn-celsius, .btn-close {
   width: 22px;
   height: 22px;
+  margin-left: 3px;
   border: none;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
 
