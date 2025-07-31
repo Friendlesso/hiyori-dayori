@@ -8,19 +8,32 @@
     <div class="app-window">
       <header>
         <div class="control-bar">
-          <button class="btn-close"></button>
-          <button class="btn-celsius"></button>
-          <button class="btn-fahrenheit"></button>
+          <div class="input-container">
+            <input type="text" class="city_input" placeholder="Enter city here">
+              <button id="fetchWeatherBtn" class="get_weather_btn">Get Weather</button>
+          </div>
+          <div class="control_bar_btns">
+            <button class="btn-close bg-placement btn_close"></button>
+            <button class="btn-celsius bg-placement btn_celsius"></button>
+            <button class="btn-fahrenheit bg-placement btn_fahrenheit" ></button>
+          </div>
         </div>
       </header>
       <main>
-        <div class="temp-info"></div>
+        <div class="temp-info">
+          <div class="image-container">
+            <p class="temp-display temp_display"></p>
+          </div>
+        </div>
       </main>
       <footer>
         <div class="weather-info">
-          <p class="day-text"></p>
+          <div class="display-msg-contianer bg-placement ">
+            <p class="day-text">It's a sunny day!</p>
+          </div>
         </div>
       </footer>
     </div>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

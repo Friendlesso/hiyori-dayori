@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, webContents } = require('electron');
 const path = require('node:path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -15,12 +15,12 @@ const createWindow = () => {
     transparent: true,
     resizable: false,
     webPreferences: {
-      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      enableBlinkFeatures: 'Geolocation'
     },
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+mainWindow.loadFile('src/index.html')
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
@@ -39,6 +39,7 @@ app.whenReady().then(() => {
       createWindow();
     }
   });
+
 });
 
 // Quit when all windows are closed, except on macOS. There, it's common
