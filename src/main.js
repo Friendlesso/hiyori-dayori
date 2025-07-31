@@ -22,7 +22,7 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-mainWindow.loadFile('src/index.html')
+mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
 };
 

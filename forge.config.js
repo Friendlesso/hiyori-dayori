@@ -4,12 +4,21 @@ const { FuseV1Options, FuseVersion } = require('@electron/fuses');
 module.exports = {
   packagerConfig: {
     asar: true,
+    icon: 'src/assets/icon/toto.ico'
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
-      config: {},
+      config: {
+        setupIcon: 'src/assets/icon/toto.ico', 
+        setupExe: 'HiyoriDayori.exe',
+        noMsi: true,
+        shortcutName: 'Hiyori Dayori',
+        createDesktopShortcut: true,
+        createStartMenuShortcut: true,
+        shortcutFolderName: 'Hiyori Dayori',
+      },
     },
     {
       name: '@electron-forge/maker-zip',

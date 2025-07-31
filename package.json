@@ -1,9 +1,9 @@
 {
   "name": "hiyori-dayori",
-  "productName": "hiyori-dayori",
+  "productName": "Hiyori Dayori",
   "version": "1.0.0",
-  "description": "My Electron application description",
-  "main": ".webpack/main",
+  "description": "Weather App",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
