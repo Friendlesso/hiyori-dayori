@@ -50,6 +50,10 @@ function updateTemperatureDisplay(unit) {
 }
 
 document.getElementById('fetchWeatherBtn').addEventListener('click', () => {
+  const featchSoundEffect = document.querySelector('.js-fetch-sound');
+  featchSoundEffect.volume = 0.1;
+  if(featchSoundEffect) featchSoundEffect.play();
+
   const inputEl = document.querySelector('.js-city-input');
   const city = inputEl.value.trim();
   if(!city) {
@@ -89,15 +93,18 @@ function celsiusToFahrenheit(celsius) {
   return (celsius * 9/5) + 32;
 }
 
-function setTemperature(celsius){
-  currentTempCelsius = celsius;
-  updateTemperatureDisplay('C');
+function playSound() {
+  const soundEffect = document.querySelector('.js-button-sound');
+  soundEffect.volume = 0.1;
+  if(soundEffect) soundEffect.play();
 }
 
 document.querySelector('.js-btn-celsius').addEventListener('click', () => {
   updateTemperatureDisplay('C');
+  playSound();
 })
 
 document.querySelector('.js-btn-fahrenheit').addEventListener('click', () => {
   updateTemperatureDisplay('F');
+  playSound();
 })
