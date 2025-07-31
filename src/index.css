@@ -37,6 +37,12 @@ input {
 input:focus {
   outline: none;
 }
+input::placeholder {
+  color: white;
+}
+button, input, .get-weather-btn {
+  -webkit-app-region: no-drag;
+}
 .app-window {
   background: url('./assets/background.gif')no-repeat center center fixed ;
   background-position: center;
@@ -54,10 +60,34 @@ input:focus {
 .control-bar {
   -webkit-app-region: drag;
   display: flex;
+  align-items: center;
+  margin-top: -2px;
+  margin-bottom: 2px;
 }
-
-button, input, .get_weather_btn {
-  -webkit-app-region: no-drag;
+.input-container {
+  display: flex;
+  align-items: center;
+}
+.city-input {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 4px;
+  width: 125px;
+  padding: 3px 2px;
+}
+.get-weather-btn {
+  background-image: url('assets/getWeather.png');
+  width: 22px;
+  height: 22px;
+  margin-left: 5px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.control-bar-btns {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: auto;
 }
 
 .btn-close {
@@ -86,8 +116,8 @@ button, input, .get_weather_btn {
 }
 .image-container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   background-image: url('assets/cloud.png');
   background-position: center;
   background-size: cover;
@@ -95,7 +125,6 @@ button, input, .get_weather_btn {
   width: 200px;
   animation: float 3s ease-in-out infinite;
 }
-
 .temp-display {
   font-size: 30px;
   margin-bottom: 16px;
@@ -117,37 +146,7 @@ button, input, .get_weather_btn {
   font-size: 20px;
   margin-top: 10px;
 }
-
-.city_input {
-  background: transparent;
-  border: 2px solid white;
-  border-radius: 4px;
-  width: 125px;
-  height: 20px;
-}
-.input_pretext {
-  color: white;
-}
-.input-container {
-  display: flex;
-  align-items: center;
-}
-.control_bar_btns {
-  display: flex;
-  flex-direction: row-reverse;
-  margin-left: auto;
-}
-.control-bar {
-  align-items: center;
-  margin-top: -15px;
-}
-
-.get_weather_btn {
-  background-color: transparent;
-  border: 2px solid white;
-  font-family: 'Pixelify Sans';
-}
-/* Animations */
+/* Animations for the cloud */
 @keyframes float {
   0%,100% {transform: translateY(0);}
   50% {transform: translateY(-7px);}
